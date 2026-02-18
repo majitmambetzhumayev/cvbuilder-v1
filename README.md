@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# cvbuilder-v1
+
+Bilingual (FR/EN) CV and portfolio — built entirely with [Claude Code](https://claude.ai/code) by Anthropic.
+
+> This project was designed, architected, debugged, and populated with content through an agentic coding session with Claude Code. No code was written manually.
+
+## Stack
+
+- **Next.js 16** — App Router
+- **React 19** / **TypeScript 5**
+- **Sanity CMS** — content management, embedded studio at `/studio`
+- **next-intl v4** — bilingual routing (`/fr/`, `/en/`)
+- **Tailwind CSS v4** — OKLCH color palette
+- **Resend** — contact form email delivery
+
+## Features
+
+- Fully bilingual CV (profile, experience, education, skills, languages)
+- Portfolio projects section
+- Contact form
+- Sanity Studio embedded in the app
+- Live content updates via Sanity Live Content API
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Copy `.env.local.example` and fill in your keys:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=
+SANITY_API_READ_TOKEN=
+RESEND_API_KEY=
+RESEND_FROM_EMAIL=
+RESEND_TO_EMAIL=
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Built with Claude Code
 
-## Learn More
+This entire project was built using [Claude Code](https://claude.ai/code), Anthropic's agentic CLI for software engineering. Tasks handled by Claude Code include:
 
-To learn more about Next.js, take a look at the following resources:
+- Project architecture and file structure
+- All component and schema code
+- Sanity CMS setup, schema design, and data population (migrated from an existing portfolio)
+- Debugging (dataset ACL, schema deployment, middleware conventions)
+- Git setup and deployment prep
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Majit Mambetzhumayev** — [sparqup.fr](https://sparqup.fr) · [GitHub](https://github.com/majitmambetzhumayev)
